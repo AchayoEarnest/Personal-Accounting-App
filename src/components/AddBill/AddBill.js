@@ -6,10 +6,19 @@ const AddBill = () => {
 
   const billObjectValid = () => {
     const validTitle =
-      newBillTitle && newBillTitle.split("").find((char) => char !== " ");
+      newBillTitle && newBillTitle.split('').find(char => char !== ' ');
     const validCost = newBillCost && Number.parseFloat(newBillCost);
 
     return validTitle && validCost;
+  };
+
+  const updateData = () => {
+    console.log(newBillTitle, newBillCost);
+  };
+
+  const clearBill = () => {
+    setNewBillCost("");
+    setNewBillTitle("");
   };
 
   return (
@@ -31,8 +40,9 @@ const AddBill = () => {
       <button
         className="flex bg-blue-500 text-white px-6 py-2 rounded-md mx-auto my-4"
         onClick={() => {
-          if (billObjectValid) {
+          if (billObjectValid()) {
             updateData();
+            clearBill();
           }
         }}
       >
