@@ -1,11 +1,12 @@
 import "./App.css";
+import AddBill from "../AddBill/AddBill";
 
-const  App = () => {
+const App = () => {
   return (
-    <>
-    <h1>Hello World!</h1>
-    </>
+    <div className="bills-container">
+      <AddBill />
+    </div>
   );
-}
+};
 
 export default App;

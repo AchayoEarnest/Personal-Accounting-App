@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,13 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+.bills-container {
+  width: 500px;
+  box-shadow: 2px 5px 20px gray;
+  height: 750px;
+  margin: auto;
+  margin-top: 100px;
 }
