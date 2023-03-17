@@ -1,19 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { BillContext } from "../../Context/BillContext";
 
 const AddBill = () => {
   const [newBillTitle, setNewBillTitle] = useState("");
   const [newBillCost, setNewBillCost] = useState("");
 
+  const { updateBills } = useContext(BillContext);
+
   const billObjectValid = () => {
     const validTitle =
-      newBillTitle && newBillTitle.split('').find(char => char !== ' ');
+      newBillTitle && newBillTitle.split("").find((char) => char !== " ");
     const validCost = newBillCost && Number.parseFloat(newBillCost);
 
     return validTitle && validCost;
-  };
-
-  const updateData = () => {
-    console.log(newBillTitle, newBillCost);
   };
 
   const clearBill = () => {
@@ -41,7 +40,10 @@ const AddBill = () => {
         className="flex bg-blue-500 text-white px-6 py-2 rounded-md mx-auto my-4"
         onClick={() => {
           if (billObjectValid()) {
-            updateData();
+            updateBills({
+              title: newBillTitle,
+              cost: newBillCost
+            });
             clearBill();
           }
         }}

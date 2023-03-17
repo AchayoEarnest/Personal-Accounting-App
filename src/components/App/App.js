@@ -1,10 +1,13 @@
 import "./App.css";
 import AddBill from "../AddBill/AddBill";
+import { BillProvider } from "../../Context/BillContext";
 
 const App = () => {
   return (
     <div className="bills-container">
-      <AddBill />
+      <BillProvider>
+        <AddBill />
+      </BillProvider>
     </div>
   );
 };
