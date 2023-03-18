@@ -6,6 +6,7 @@ const BillProvider = ({ children }) => {
   const [bills, setBills] = useState([]);
 
   const updateBills = (bill) => {
+    localStorage.setItem()
     console.log(bill);
   };
 

@@ -23,14 +23,14 @@ const AddBill = () => {
   return (
     <div>
       <input
-        className="w-full h-9 pl-5 border"
+        className=" w-full h-9 pl-5 border text-center"
         placeholder="Enter bill title"
         type="text"
         value={newBillTitle}
         onChange={(e) => setNewBillTitle(e.target.value)}
       />
       <input
-        className="w-full h-9 pl-5 border"
+        className="w-full h-9 pl-5 border text-center"
         placeholder="Enter bill cost"
         type="number"
         value={newBillCost}
@@ -42,7 +42,7 @@ const AddBill = () => {
           if (billObjectValid()) {
             updateBills({
               title: newBillTitle,
-              cost: newBillCost
+              monthlyCost: newBillCost,
             });
             clearBill();
           }
